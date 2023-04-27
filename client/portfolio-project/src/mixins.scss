@@ -1,0 +1,228 @@
+@import './variables.scss';
+
+
+
+/*Animations*/
+@mixin animation-pulse{
+    box-shadow: 0px 0px 20px $yellow-color;
+    animation: pulse 2s ease-out infinite;
+    @keyframes pulse {
+    0%{
+      box-shadow: 0px 0px 0px $yellow-color;
+    }  
+    50%{
+      box-shadow: 0px 0px 20px $yellow-color;
+    }
+    100%{
+    box-shadow: 0px 0px 0px $yellow-color;
+    }      
+  }
+}
+
+@mixin right-animation{
+        opacity: 0;
+        animation: slideRight 1s ease forwards;
+        &:nth-child(4){
+            animation-delay: 250ms;
+            
+            }
+        @keyframes slideRight{
+            0%{
+              transform: translateX(-200px);
+              opacity: 0;
+            }
+            100%{
+              transform: translateX(0);
+              opacity: 1;
+            }
+          }
+}
+
+
+
+/* Menu mobile*/
+@mixin ul-mobile{
+    @media screen and (max-width:768px) {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        gap: 0;
+        padding: 0;
+        flex-direction: column;
+        align-items: flex-start; 
+        opacity: 0;
+        animation: slideLeft 1s ease forwards;
+        &:nth-child(4){
+            animation-delay: 250ms;
+            
+            }
+        @keyframes slideLeft{
+            0%{
+              transform: translateX(100px);
+              opacity: 0;
+            }
+            100%{
+              transform: translateX(0);
+              opacity: 1;
+            }
+          }
+    }
+}
+
+@mixin li-mobile{
+    @media screen and (max-width:768px){
+        width: 100%;
+        background-color:  rgba(255, 184, 08, 0.6);               
+        border-bottom: 0.5px solid black;
+        border-radius: 10px; 
+    }
+}
+@mixin a-mobile{
+    @media screen and (max-width:768px){
+        color: $black-color;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        font-weight:400;
+        padding: 1rem 5rem 1rem 3rem;
+        
+    }
+}
+
+@mixin span-mobile{
+    @media screen and (max-width:768px){
+        padding: 0;
+        background: none;
+    }
+}
+
+@mixin nav-mobile{
+    @media screen and (max-width:768px) {
+        display: flex;
+        cursor: pointer;
+        
+       }
+}
+@mixin display-none{
+    @media screen and (max-width:768px) {
+        .display-none{
+            display: none;
+            
+        }
+    }
+}
+
+/*Header mobile*/
+
+@mixin header-mobile{
+    @media screen and (max-width:768px) {
+       flex-direction: column; 
+       gap: 10px;  
+       margin-top: 50px;  
+       background: $black-color;  
+       }
+}
+
+@mixin social-network-mobile{
+    @media screen and (max-width:768px) {
+       width: 330px;
+       flex-direction:row;
+       align-items: center;
+       justify-content: center;
+       position: relative;
+       padding: 10px  40px;
+       left: 0; 
+       } 
+    @media screen and (max-width:600px) {           
+        width:290px;
+        padding: 10px  30px;
+        gap: 20px;
+       }           
+}
+
+@mixin padding-mobile{
+    @media screen and (max-width:600px) {      
+       padding: 20px;     
+       }       
+}
+
+/*Aboui - mobile*/
+
+@mixin about-section-mobile{
+    @media screen and (max-width:960px) {      
+       flex-direction:column; 
+       gap: 40px;     
+       }       
+}
+
+@mixin rigth-content-mobile{
+    @media screen and (max-width:600px) {      
+       padding: 50px; 
+       gap: 40px;    
+       }       
+}
+
+@mixin figure-mobile{
+    @media screen and (max-width:600px) {      
+        width: 250px;
+        height: 340px;    
+       }       
+}
+
+/* h1 mobile*/
+
+@mixin text-mobile{
+    @media screen and (max-width:600px) {      
+        h1{
+            font-size: 32px;  
+        }
+        h2{
+            font-size: 20px;
+        } 
+        p{
+            font-size: 14px;
+        }
+
+       }       
+}
+
+@mixin span-about-mobile{
+    @media screen and (max-width:600px) {            
+            font-size: 14px;         
+   }
+}
+
+/*Contact*/
+
+@mixin contact-mobile{
+    @media screen and (max-width:768px) {            
+            flex-direction: column; 
+            gap: 20px;        
+   }
+}
+
+@mixin contact-left{
+    @media screen and (max-width:768px) {                     
+        width: 100%;             
+   }
+}
+
+@mixin contact-rigth{
+    @media screen and (max-width:768px) {                     
+        width: 100%;             
+   }
+   
+}
+
+
+/*Footer*/
+
+@mixin ul-footer-mobile{
+    @media screen and (max-width:600px) {                   
+    gap: 20px; 
+   }
+   @media screen and (max-width:320px) {                   
+    gap: 10px; 
+}
+}
+

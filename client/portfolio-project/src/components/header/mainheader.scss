@@ -1,0 +1,177 @@
+@import "../../variables.scss";
+@import '../../mixins.scss';
+header{
+    display: flex;
+    position: relative;
+    width: 100%;
+    min-height: calc(100vh + 60px);
+    align-items: center;
+    justify-content: center;   
+    background-size: cover;
+    background-position: center;   
+    @include header-mobile;
+    
+    
+    .header-profile{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        background-color: rgba(255, 255, 255, 0.3);
+        backdrop-filter: blur(5px);
+        -webkit-backdrop-filter: blur(10px);
+        padding: 40px;
+        border-radius: 10px;
+        h1{
+            text-align: center;
+        }
+        .edit-home{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width:100%;
+            height:100%;
+            position: absolute;
+            background: $gray-color;
+            border-radius: 10px;
+            top: 0;
+            right: 0;
+            z-index: 99;
+            p{
+                align-self: flex-end;
+                margin: 10px;
+                font-size: 22px;
+                cursor: pointer;
+            }
+            
+            img{
+                width: 100px;
+                height: 100px;
+                margin: 5px;
+                @include animation-pulse;
+            }
+            form{
+                display: flex;
+                flex-direction: column;
+                align-self: center;
+                width: 80%;
+                label{
+                    align-self: self-start;
+                    color: $yellow-color;
+                }
+                input{
+                    width: 100%;
+                    height: 40px;
+                    color: $white-color;
+                    font-weight: 200;
+                    background: $gray-color-rgba;
+                    border-radius: 5px;
+                    border: none;
+                    outline: none;
+                    margin-bottom: 10px
+                }
+                .btns-submit{
+                    display: flex;
+                    gap: 10px;
+                    
+                }
+                
+              }
+            
+            @include right-animation;
+    
+        }
+        .display-none{
+            display: none;
+         }
+        @include padding-mobile;
+        img{
+            width: 250px;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 50%;
+            @include padding-mobile;
+            
+        }
+
+       
+    }
+    
+    .socials-networks{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 32px;
+        position: absolute;
+        left: 10px;
+        background-color: rgba(255, 255, 255, 0.3);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        padding: 40px 10px;
+        border-radius: 10px;
+        @include social-network-mobile;
+        a{
+            font-weight: 400;
+            font-size: 34px;
+            line-height: 36px;
+            color: white;
+            &:hover{
+                color: $yellow-color;
+                transition: .3s;
+            }
+        }
+        #btn-edit-links{
+            font-size: 25px;
+            color: $yellow-color;
+            cursor: pointer;
+        }
+    }
+
+    .edit-socials-networks{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 300px;
+        height: auto;
+        border-radius: 10px;
+        position: absolute;
+        background: $gray-color;
+        left: 65px;
+        
+        .form-social-networks{
+            display: flex;
+            flex-direction: column;
+            width: 80%;
+            margin: 25px 0;
+            label{
+                align-self: self-start;
+                color: $yellow-color;
+            }
+            input{
+                width: 100%;
+                height: 40px;
+                color: $white-color;
+                font-weight: 200;
+                background: $gray-color-rgba;
+                border-radius: 5px;
+                border: none;
+                outline: none;
+                margin-bottom: 10px
+            }
+
+        }
+        
+        @include right-animation;
+
+        .btns-social-links{
+            display: flex;
+            gap: 10px;
+            margin: 10px;
+        }
+    }
+
+    .display-none{
+       display: none;
+    }
+}
